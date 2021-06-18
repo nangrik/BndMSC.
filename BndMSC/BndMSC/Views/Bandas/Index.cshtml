@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BndMSC.Models.Bandas>
+
+@{ 
+    ViewData["title"] = "Bandas";
+}
+<h2>Lista de Bandas</h2>
+<p>
+    <a asp-action="Create" class="btn btn-success">Nueva Banda</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(Model => Model.BandaName)
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+               <tr>
+                   <td>@Html.DisplayFor(ModelItem => item.BandaName)</td>
+                   <td>
+                       <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.BandasId">Editar</a>
+                       <a asp-action="Details" class="btn btn-success" asp-route-id="@item.BandasId">Detalles</a>
+                       <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.BandasId">Borrar</a>
+                   </td>
+               </tr>
+            }
+        </tbody>
+    </table>
+</p>

@@ -1,0 +1,29 @@
+﻿@model BndMSC.Models.Bandas
+
+@{
+    ViewData["title"] = "Borrar";
+}
+
+<h2>Borrar Banda</h2>
+<h4>Esta Seguro de BORRAR esta banda?</h4>
+<Div>
+    <h4>Borrar Banda</h4>
+
+    <hr />
+    <dl class="row">
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BandaName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BandaName)
+        </dd>
+    </dl>
+</Div>
+<div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="BandasId" />
+        <input type="submit" class="btn btn-danger" value="Borrar" />
+        <a asp-action="Index" class="btn btn-success">Regresar</a>
+    </form>
+</div>
